@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(239, 196, 6, 0.781);
+    padding: 10px 30px;
+    font-size: 16px;
+}
+.logo-container {
+    display: flex;
+    width: 170px;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight:600;
+    line-height: 1;
+}
+.logo {
+    font-size: 40px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+}
+.nav-list .list-item > a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+.nav-list .list-item > a:hover {
+    font-weight:600;
+}
