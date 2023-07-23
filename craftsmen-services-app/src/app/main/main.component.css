@@ -95,3 +95,43 @@
 .details-contact > p > span {
     font-weight: bold;
 }
+
+/* Register component */
+
+#register {
+    width: 40%;
+    background-color: rgb(243, 241, 239);
+    border-radius: 6px;
+    border: 1px solid black;
+    margin: 30px auto 20px auto;
+    text-align: center;
+}
+.register-form {
+    padding: 15px;
+}
+h2 {
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+
+label {
+    font-size: 20px;
+}
+input {
+    border-radius: 4px;
+}
+
+label, input {
+    display: block;
+    margin: 10px auto;
+}
+.btn {
+    margin: 10px;
+    /* width: 100px; */
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    background-color: rgba(239, 196, 6, 0.781);
+
+}
