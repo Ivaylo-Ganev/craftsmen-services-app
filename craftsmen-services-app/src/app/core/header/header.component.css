@@ -38,3 +38,7 @@
 .nav-list .list-item > a:hover {
     font-weight:600;
 }
+
+.logo > a {
+    color: black;
+}
