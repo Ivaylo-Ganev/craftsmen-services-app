@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListingsComponent } from './listings/listings.component';
+import { FeatureRoutingModule } from './feature-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { ListingsComponent } from './listings/listings.component';
     ListingsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FeatureRoutingModule
   ]
 })
 export class FeatureModule { }
