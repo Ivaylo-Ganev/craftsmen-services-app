@@ -14,5 +14,10 @@ export class UserService {
 
   register(email: string, username: string, password: string) {
     return this.http.post<User>(`${apiUrl}/users/register`, {email, username, password})
-  }
+  };
+
+  login(email: string, password: string) {
+    return this.http.post(`${apiUrl}/users/login`, {email, password})
+  };
+
 }
