@@ -1,24 +1,52 @@
 <!-- Register component -->
 
 <section id="register">
-    <h2>Register</h2>
-    <form class="register-form">
-        <div class="form-group">
-            <label for="username" name="username">Username</label>
-            <input type="text" id="username" name="username" >
-        </div>
-        <div class="form-group">
-            <label for="email" name="email">Email</label>
-            <input type="email" id="email" name="email">
-        </div>
-        <div class="form-group">
-            <label for="password" name="password">Password</label>
-            <input type="password" id="password" name="password">
-        </div>
-        <div class="form-group">
-            <label for="rePassword" name="rePassword">Repeat password</label>
-            <input type="password" id="rePassword" name="rePassword">
-        </div>
-        <button class="register-btn">Create an account</button>
-    </form>
+  <h2>Register</h2>
+  <form
+    class="register-form"
+    #registerForm="ngForm"
+    (ngSubmit)="registerSubmitHandler(registerForm)"
+  >
+    <div class="form-group">
+      <label for="username" name="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        #inputUsername="ngModel"
+        ngModel
+      />
+    </div>
+    <div class="form-group">
+      <label for="email" name="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        #inputEmail="ngModel"
+        ngModel
+      />
+    </div>
+    <div class="form-group">
+      <label for="password" name="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        #inputPassword="ngModel"
+        ngModel
+      />
+    </div>
+    <div class="form-group">
+      <label for="rePassword" name="rePassword">Repeat password</label>
+      <input
+        type="password"
+        id="rePassword"
+        name="rePassword"
+        #inputRepassword="ngModel"
+        ngModel
+      />
+    </div>
+    <button class="register-btn">Create an account</button>
+  </form>
 </section>
