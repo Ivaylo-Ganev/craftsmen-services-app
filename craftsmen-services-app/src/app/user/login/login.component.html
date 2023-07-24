@@ -1,16 +1,28 @@
 <!-- Login component -->
 
 <section id="login">
-    <h2>Login</h2>
-    <form class="login-form">
-        <div class="form-group">
-            <label for="email" name="email">Email</label>
-            <input type="email" id="email" name="email">
-        </div>
-        <div class="form-group">
-            <label for="password" name="password">Password</label>
-            <input type="password" id="password" name="password">
-        </div>
-        <button class="login-btn">Log in</button>
-    </form>
+  <h2>Login</h2>
+  <form class="login-form" #loginForm="ngForm" (ngSubmit)="loginSubmitHandler(loginForm)">
+    <div class="form-group">
+      <label for="email" name="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        #inputEmail="ngModel"
+        ngModel
+      />
+    </div>
+    <div class="form-group">
+      <label for="password" name="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        #inputPassword="ngModel"
+        ngModel
+      />
+    </div>
+    <button class="login-btn">Log in</button>
+  </form>
 </section>
