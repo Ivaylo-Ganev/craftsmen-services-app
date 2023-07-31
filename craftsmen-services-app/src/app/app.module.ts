@@ -10,6 +10,7 @@ import { UserModule } from './user/user.module';
 import { FeatureModule } from './feature/feature.module';
 import { ApiInterceptorProvider } from './api.interceptor';
 import { AuthInterceptorProvider } from './auth.interceptor';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, MainComponent],
@@ -20,6 +21,7 @@ import { AuthInterceptorProvider } from './auth.interceptor';
     UserModule,
     FeatureModule,
     HttpClientModule,
+    SharedModule
   ],
   providers: [ApiInterceptorProvider, AuthInterceptorProvider],
   bootstrap: [AppComponent],
