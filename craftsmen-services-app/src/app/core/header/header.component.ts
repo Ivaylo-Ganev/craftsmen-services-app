@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/user/user.service';
+import { AuthService } from 'src/app/user/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,7 @@ import { UserService } from 'src/app/user/user.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: AuthService, private router: Router) {}
 
   logoutHandler() {
     this.userService.logout().subscribe(() => {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserService } from '../user.service';
+import { AuthService } from '../auth.service';
 import {NgForm} from '@angular/forms'
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: AuthService, private router: Router) {}
 
   registerSubmitHandler(form: NgForm) {
     if(form.invalid) {

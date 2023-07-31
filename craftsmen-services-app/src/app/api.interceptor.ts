@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment.development';
 const {apiUrl} = environment;
 
 @Injectable()
-export class AppInterceptor implements HttpInterceptor {
+export class ApiInterceptor implements HttpInterceptor {
 
   constructor() {}
 
@@ -30,8 +30,8 @@ export class AppInterceptor implements HttpInterceptor {
 
 }
 
-export const AppInterceptorProvider: Provider = {
-  useClass: AppInterceptor,
+export const ApiInterceptorProvider: Provider = {
+  useClass: ApiInterceptor,
   multi: true,
   provide: HTTP_INTERCEPTORS
 }

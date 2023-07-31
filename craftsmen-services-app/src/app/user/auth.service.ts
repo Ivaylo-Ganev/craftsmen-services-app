@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.development';
 import { User } from '../types/user';
 import { tap } from 'rxjs';
-
-const {apiUrl} = environment
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class AuthService {
   user: User | undefined
   USER_KEY = '[user]'
   token: string | undefined

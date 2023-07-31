@@ -8,7 +8,7 @@ import { CoreModule } from './core/core.module';
 import { MainComponent } from './main/main.component';
 import { UserModule } from './user/user.module';
 import { FeatureModule } from './feature/feature.module';
-import { AppInterceptorProvider } from './app.interceptor';
+import { ApiInterceptorProvider } from './api.interceptor';
 import { AuthInterceptorProvider } from './auth.interceptor';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { AuthInterceptorProvider } from './auth.interceptor';
     FeatureModule,
     HttpClientModule,
   ],
-  providers: [AppInterceptorProvider, AuthInterceptorProvider],
+  providers: [ApiInterceptorProvider, AuthInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
