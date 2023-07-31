@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private userService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   loginSubmitHandler(form: NgForm) {
     if (form.invalid) {
       return;
     }
     const { email, password } = form.value;
-    this.userService.login(email, password).subscribe(() => {
+    this.authService.login(email, password).subscribe(() => {
       this.router.navigate(['/listings']);
     });
   }

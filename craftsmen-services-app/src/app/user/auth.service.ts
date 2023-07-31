@@ -15,6 +15,10 @@ export class AuthService {
     return this.user?.accessToken;
   }
 
+  get isLogged() {
+    return !!this.user;
+  }
+
   constructor(private http: HttpClient) { }
 
   register(email: string, username: string, password: string) {

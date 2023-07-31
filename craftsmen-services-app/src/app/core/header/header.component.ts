@@ -8,10 +8,14 @@ import { AuthService } from 'src/app/user/auth.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  constructor(private userService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
+
+  get isLogged(): boolean {
+    return this.authService.isLogged;
+  } 
 
   logoutHandler() {
-    this.userService.logout().subscribe(() => {
+    this.authService.logout().subscribe(() => {
       this.router.navigate(['/login']);
     });
   }
