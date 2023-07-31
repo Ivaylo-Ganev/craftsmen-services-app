@@ -5,4 +5,7 @@ export interface Listing {
     phone: string;
     email: string;
     desc: string;
+    _createdOn: number;
+    _id: string;
+    _onwnerId: string;
 }

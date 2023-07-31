@@ -4,7 +4,7 @@ import { ListingsComponent } from './listings/listings.component';
 import { FeatureRoutingModule } from './feature-routing.module';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
-
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +15,8 @@ import { ListingDetailsComponent } from './listing-details/listing-details.compo
   ],
   imports: [
     CommonModule,
-    FeatureRoutingModule
+    FeatureRoutingModule,
+    FormsModule
   ]
 })
 export class FeatureModule { }
