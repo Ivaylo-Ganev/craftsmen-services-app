@@ -13,6 +13,7 @@ export class AuthService {
 
   getToken() {
     return this.user?.accessToken;
+    
   }
 
   get isLogged() {
@@ -60,9 +61,7 @@ export class AuthService {
   };
 
   getProfile() {
-    return this.http.get<User>('/api/users/me').pipe(tap((user) => {
-      this.user = user;
-    }))
+    return this.http.get<User>('/api/users/me')
   }
 
 }

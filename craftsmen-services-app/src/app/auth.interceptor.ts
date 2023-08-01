@@ -12,12 +12,11 @@ import { AuthService } from './user/auth.service';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor(private userService: AuthService) {}
+  constructor(private authService: AuthService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-    const token = this.userService.getToken();
-
+    const token = this.authService.getToken();
     let req = request;
       if(token) {
         req = request.clone({
@@ -28,8 +27,7 @@ export class AuthInterceptor implements HttpInterceptor {
         });
       
       }
-    
-    return next.handle(req);
+    return next.handle(req)
   }
 }
 export const AuthInterceptorProvider: Provider = {
