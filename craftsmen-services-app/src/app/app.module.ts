@@ -11,9 +11,10 @@ import { FeatureModule } from './feature/feature.module';
 import { ApiInterceptorProvider } from './api.interceptor';
 import { AuthInterceptorProvider } from './auth.interceptor';
 import { SharedModule } from './shared/shared.module';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent],
+  declarations: [AppComponent, MainComponent, AuthenticateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

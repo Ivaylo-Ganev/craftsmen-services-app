@@ -21,8 +21,7 @@ export class ApiInterceptor implements HttpInterceptor {
     let req = request;
     if(request.url.startsWith('/api')) {
       req = request.clone({
-        url: request.url.replace('/api', apiUrl),
-      });
+        url: request.url.replace('/api', apiUrl)      });
     };
 
     return next.handle(req);
