@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FeatureService } from '../feature.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,16 +11,15 @@ import { FeatureService } from '../feature.service';
 })
 export class CreateListingComponent {
 
-  constructor(private featureService: FeatureService) {}
+  constructor(private featureService: FeatureService, private router: Router) {}
 
   createListingSubmitHandler(form: NgForm): void {
     if(form.invalid) {
       return;
     }
     const {name, category, photo, phone, email, desc} = form.value;
-    this.featureService.createListing(name, category, photo, phone, email, desc).subscribe(data => {
-      console.log(data);
-      
+    this.featureService.createListing(name, category, photo, phone, email, desc).subscribe(() => {
+        this.router.navigate(['/listings']);
     })
   }
 }
