@@ -47,3 +47,8 @@
     margin-left: auto;
     gap: 30px;
 }
+.logged-user {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
