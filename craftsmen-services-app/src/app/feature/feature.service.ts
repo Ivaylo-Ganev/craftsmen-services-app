@@ -11,5 +11,9 @@ export class FeatureService {
 
   createListing(name: string, category: string, photo: string, phone: string, email: string, desc: string) {
     return this.http.post<Listing>('/api/data/listings', {name, category, photo, phone, email, desc});
+  };
+
+  getListings() {
+    return this.http.get<Listing[]>('/api/data/listings');
   }
 }
