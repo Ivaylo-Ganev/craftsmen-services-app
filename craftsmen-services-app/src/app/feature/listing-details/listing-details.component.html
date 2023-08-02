@@ -6,23 +6,20 @@
       <div class="details-img-container">
         <img
           class="details-card-img"
-          src="https://previews.123rf.com/images/stylephotographs/stylephotographs1906/stylephotographs190600040/124173230-man-as-a-craftsman-with-crossed-arms-in-the-carpentry-or-joinery.jpg"
+          src={{listing?.photo}}
           alt="craftsman-pic"
         />
       </div>
       <div class="details-contact">
-        <p class="details-name"><span>Name: </span>John Mogensen</p>
-        <p class="details-category"><span>Category: </span>Carpenter</p>
-        <p class="details-phone"><span>Phone: </span>+359 567777</p>
-        <p class="details-email"><span>Email: </span>ivo@abv.bg</p>
+        <p class="details-name"><span>Name: </span>{{listing?.name}}</p>
+        <p class="details-category"><span>Category: </span>{{listing?.category}}</p>
+        <p class="details-phone"><span>Phone: </span>{{listing?.phone}}</p>
+        <p class="details-email"><span>Email: </span>{{listing?.email}}</p>
       </div>
     </div>
     <div class="details-desc">
       <p class="desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores totam
-        veritatis doloribus magnam ab dicta, praesentium recusandae mollitia
-        repellendus tenetur soluta provident reiciendis nesciunt sapiente velit
-        quae similique ratione dolorem. 
+        {{listing?.desc}}
     </div>
   </div>
 </section>

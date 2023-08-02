@@ -16,4 +16,8 @@ export class FeatureService {
   getListings() {
     return this.http.get<Listing[]>('/api/data/listings');
   }
+
+  getListing(id: string) {
+    return this.http.get<Listing>(`/api/data/listings/${id}`);
+  }
 }
