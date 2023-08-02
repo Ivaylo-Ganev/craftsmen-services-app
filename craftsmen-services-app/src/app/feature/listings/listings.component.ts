@@ -13,10 +13,14 @@ export class ListingsComponent implements OnInit{
   constructor(private featureService: FeatureService) {}
 
   ngOnInit(): void {
+    this.fetchListings();
+  }
+  fetchListings() {
     this.featureService.getListings().subscribe({
       next: (listings) => {
         this.listings = listings;
       }
     })
   }
+
 }

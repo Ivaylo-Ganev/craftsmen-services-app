@@ -8,11 +8,11 @@ const routes: Routes = [
   {
     path: 'listings',
     children: [
-        {path: '', pathMatch: 'full', component: ListingsComponent},
-        {path: 'create', component: CreateListingComponent},
-        {path: ':listingId', component: ListingDetailsComponent}
-    ]
+      { path: '', pathMatch: 'full', component: ListingsComponent },
+      { path: ':listingId', component: ListingDetailsComponent },
+    ],
   },
+  { path: 'create', component: CreateListingComponent },
 ];
 
 @NgModule({
