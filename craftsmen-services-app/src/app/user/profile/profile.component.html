@@ -3,13 +3,13 @@
     <div class="profile-img-container">
       <img
         class="profile-img"
-        src="https://football-italia.net/wp-content/uploads/2022/05/bl16016626162481.png"
+        src={{user.userPhoto}}
         alt="profile-img"
       />
     </div>
     <div class="user-info">
       <p class="username"><span>Username: </span>{{user.username}}</p>
-      <p class="user-phone"><span>Phone: </span>xxxxxxxx</p>
+      <p class="user-phone"><span>Phone: </span>{{user.phone}}</p>
       <p class="user-email"><span>Email: </span>{{user.email}}</p>
     </div>
   </div>
