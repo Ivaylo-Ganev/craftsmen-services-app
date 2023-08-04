@@ -16,9 +16,9 @@ export class RegisterComponent {
     if(form.invalid) {
       return;
     }
-    const {email, username, password} = form.value;
+    const {email, username, phone, userPhoto, password} = form.value;
 
-    this.authService.register(email, username, password).subscribe(()=> {
+    this.authService.register(email, username, phone, userPhoto, password).subscribe(()=> {
       this.router.navigate(['/listings']);
     })
     

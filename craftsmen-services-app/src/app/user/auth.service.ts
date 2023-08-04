@@ -39,8 +39,8 @@ export class AuthService {
   
    }
 
-  register(email: string, username: string, password: string) {
-    return this.http.post<User>('/api/users/register', {email, username, password}).pipe(tap(user => {
+  register(email: string, username: string, phone: string, userPhoto: string, password: string) {
+    return this.http.post<User>('/api/users/register', {email, username, phone, userPhoto, password}).pipe(tap(user => {
       this.user = user;
       localStorage.setItem(this.USER_KEY, JSON.stringify(user));
     }));

@@ -43,3 +43,8 @@
 .card-desc .details-link {
     text-align: right;
 }
+.no-listings {
+    margin-top: 200px;
+    text-align: center;
+    font-size: 48px;
+}

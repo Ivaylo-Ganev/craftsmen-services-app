@@ -19,6 +19,9 @@ export class ListingsComponent implements OnInit{
     this.featureService.getListings().subscribe({
       next: (listings) => {
         this.listings = listings;
+      },
+      error: () => {
+        this.listings = [];
       }
     })
   }
