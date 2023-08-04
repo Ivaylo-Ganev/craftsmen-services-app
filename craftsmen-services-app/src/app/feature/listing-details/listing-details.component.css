@@ -49,3 +49,8 @@
 .details-contact > p > span {
     font-weight: bold;
 }
+
+.details-heading {
+    margin: 20px 40px;
+    font-size: 32px;
+}
