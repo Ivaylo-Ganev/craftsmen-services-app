@@ -20,4 +20,9 @@ export class FeatureService {
   getListing(id: string) {
     return this.http.get<Listing>(`/api/data/listings/${id}`);
   }
+  getUserListings(userId: string) {
+    const searchQuery = encodeURIComponent(`_ownerId="${userId}"`);
+    debugger
+    return this.http.get<Listing[]>(`/api/data/listings?where=${searchQuery}`);
+  }
 }

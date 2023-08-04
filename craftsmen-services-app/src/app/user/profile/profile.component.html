@@ -8,22 +8,22 @@
       />
     </div>
     <div class="user-info">
-      <p class="username"><span>Username: </span>iganev21</p>
-      <p class="user-phone"><span>Phone: </span>+359 0888833</p>
-      <p class="user-email"><span>Email: </span>ivayloganev@gmail.com</p>
+      <p class="username"><span>Username: </span>{{user.username}}</p>
+      <p class="user-phone"><span>Phone: </span>xxxxxxxx</p>
+      <p class="user-email"><span>Email: </span>{{user.email}}</p>
     </div>
   </div>
   <h1 class="heading">My listings</h1>
   <div class="craftsmen-cards">
-    <article class="card">
+    <article class="card" *ngFor="let listing of listings">
       <div class="img-container">
-        <img class="card-img" src="https://images.unsplash.com/reserve/oIpwxeeSPy1cnwYpqJ1w_Dufer%20Collateral%20test.jpg?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHRvb2x8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="craftsman-pic" />
+        <img class="card-img" src={{listing.photo}} alt="craftsman-pic" />
       </div>
       <div class="card-desc">
-        <p class="name">Ivo</p>
-        <p class="category">Carpenter</p>
+        <p class="name">{{listing.name}}</p>
+        <p class="category">{{listing.category}}</p>
         <p class="details-link">
-          <a routerLink="423424234234">View more</a>
+          <a routerLink={{listing._id}}>View more</a>
         </p>
       </div>
     </article>
