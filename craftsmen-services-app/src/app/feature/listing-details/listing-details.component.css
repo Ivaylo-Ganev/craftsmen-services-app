@@ -4,12 +4,11 @@
 #details {
     height: 600px;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 .details-container {
-    width: 600px;
-    height: 400px;
+    width: 700px;
+    height: 450px;
     overflow: hidden;
     border: 1px solid rgb(226, 208, 175);
     border-radius: 6px;
@@ -41,9 +40,12 @@
     justify-content: center;
     gap: 20px;
 }
+
+.details-desc {
+    height: 100px;
+}
 .desc {
     margin: 20px 15px;
-    text-indent: 30px;
     text-align: justify;
 }
 .details-contact > p > span {
@@ -53,4 +55,24 @@
 .details-heading {
     margin: 20px 40px;
     font-size: 32px;
+}
+.buttons {
+    margin: 20px 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+.btn {
+    display: inline-block;
+    margin: auto;
+    width: 200px;
+    background-color: rgba(239, 196, 6, 0.781);
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
 }
