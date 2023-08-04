@@ -71,3 +71,7 @@
 .card-desc .details-link {
     text-align: right;
 }
+.no-listings {
+    text-align: center;
+    font-size: 48px;
+}
