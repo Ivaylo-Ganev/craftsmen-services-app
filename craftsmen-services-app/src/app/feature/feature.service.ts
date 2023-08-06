@@ -22,7 +22,6 @@ export class FeatureService {
   }
   getUserListings(userId: string) {
     const searchQuery = encodeURIComponent(`_ownerId="${userId}"`);
-    debugger
     return this.http.get<Listing[]>(`/api/data/listings?where=${searchQuery}`);
   }
 }

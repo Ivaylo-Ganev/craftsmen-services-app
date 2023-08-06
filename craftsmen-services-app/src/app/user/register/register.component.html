@@ -75,13 +75,13 @@
           Photo is required!
         </p>
     </ng-container>
-    <div class="passwords" ngModelGroup="passwords" #passwords="ngModelGroup" [appPassword]="['passwordOne', 'passwordTwo']">
+    <div class="passwords" ngModelGroup="passwords" #passwords="ngModelGroup" [appPassword]="['password', 'passwordTwo']">
     <div class="form-group">
       <label for="password" name="password">Password</label>
       <input
         type="password"
         id="password"
-        name="passwordOne"
+        name="password"
         #passwordOne="ngModel"
         ngModel
         required
