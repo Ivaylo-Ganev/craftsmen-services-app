@@ -5,6 +5,7 @@ import { FeatureRoutingModule } from './feature-routing.module';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
 import {FormsModule} from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {FormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     FeatureRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ]
 })
 export class FeatureModule { }

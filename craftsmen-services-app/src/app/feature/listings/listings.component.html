@@ -10,6 +10,7 @@
         <div class="card-desc">
             <p class="name">{{listing.name}}</p>
             <p class="category">{{listing.category}}</p>
+            <p class="description">{{listing.desc | slice: 50}}</p>
             <p class="details-link">
                 <a routerLink={{listing._id}}>View more</a>
             </p>

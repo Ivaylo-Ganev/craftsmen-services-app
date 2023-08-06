@@ -101,12 +101,11 @@
         #inputDesc="ngModel"
         ngModel
         required
+        maxlength="150"
       ></textarea>
     </div>
     <ng-container *ngIf="inputDesc.touched">
-        <p class="error" *ngIf="inputDesc?.errors?.['required']">
-          Description is required!
-        </p>
+        <p class="error" *ngIf="inputDesc?.errors?.['required']">Description is required!</p>
       </ng-container>
     <button class="create-btn"
     [disabled]="createForm.invalid"
