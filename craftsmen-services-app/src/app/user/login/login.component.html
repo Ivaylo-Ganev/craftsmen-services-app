@@ -2,7 +2,11 @@
 
 <section id="login">
   <h2>Login</h2>
-  <form class="login-form" #loginForm="ngForm" (ngSubmit)="loginSubmitHandler(loginForm)">
+  <form
+    class="login-form"
+    #loginForm="ngForm"
+    (ngSubmit)="loginSubmitHandler(loginForm)"
+  >
     <div class="form-group">
       <label for="email" name="email">Email</label>
       <input
@@ -11,8 +15,18 @@
         name="email"
         #inputEmail="ngModel"
         ngModel
+        required
+        email
       />
     </div>
+    <ng-container *ngIf="inputEmail.touched">
+      <p class="error" *ngIf="inputEmail?.errors?.['required']">
+        Email is required!
+      </p>
+      <p class="error" *ngIf="inputEmail?.errors?.['email']">
+        Please enter a vlaid email!
+      </p>
+    </ng-container>
     <div class="form-group">
       <label for="password" name="password">Password</label>
       <input
@@ -21,8 +35,19 @@
         name="password"
         #inputPassword="ngModel"
         ngModel
+        required
       />
     </div>
-    <button class="login-btn">Log in</button>
+    <ng-container *ngIf="inputPassword.touched">
+      <p class="error" *ngIf="inputPassword?.errors?.['required']">
+        Password is required!
+      </p>
+    </ng-container>
+    <button class="login-btn"
+    [disabled]="loginForm.invalid"
+    [style]="{backgroundColor: loginForm.invalid ? 'lightgrey' : 'rgba(239, 196, 6, 0.781)'}"
+    >
+        Log in
+    </button>
   </form>
 </section>
