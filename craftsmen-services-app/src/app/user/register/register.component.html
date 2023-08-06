@@ -15,8 +15,14 @@
         name="username"
         #inputUsername="ngModel"
         ngModel
+        required
       />
     </div>
+    <ng-container *ngIf="inputUsername.touched">
+        <p class="error" *ngIf="inputUsername?.errors?.['required']">
+          Username is required!
+        </p>
+      </ng-container>
     <div class="form-group">
       <label for="email" name="email">Email</label>
       <input
@@ -25,8 +31,18 @@
         name="email"
         #inputEmail="ngModel"
         ngModel
-      />
+        required
+        email
+        />
     </div>
+    <ng-container *ngIf="inputEmail.touched">
+        <p class="error" *ngIf="inputEmail?.errors?.['required']">
+          Email is required!
+        </p>
+        <p class="error" *ngIf="inputEmail?.errors?.['email']">
+          Please enter a vlaid email!
+        </p>
+      </ng-container>
     <div class="form-group">
         <label for="phone" name="phone">Phone</label>
         <input
@@ -35,8 +51,14 @@
           name="phone"
           #inputPhone="ngModel"
           ngModel
+          required
         />
-      </div>
+    </div>
+    <ng-container *ngIf="inputPhone.touched">
+        <p class="error" *ngIf="inputPhone?.errors?.['required']">
+          Phone is required!
+        </p>
+    </ng-container>
       <div class="form-group">
         <label for="userPhoto" name="userPhoto">Photo</label>
         <input
@@ -45,28 +67,56 @@
           name="userPhoto"
           #inputPhoto="ngModel"
           ngModel
+          required
         />
       </div>
+      <ng-container *ngIf="inputPhoto.touched">
+        <p class="error" *ngIf="inputPhoto?.errors?.['required']">
+          Photo is required!
+        </p>
+    </ng-container>
+    <div class="passwords" ngModelGroup="passwords" #passwords="ngModelGroup" [appPassword]="['passwordOne', 'passwordTwo']">
     <div class="form-group">
       <label for="password" name="password">Password</label>
       <input
         type="password"
         id="password"
-        name="password"
-        #inputPassword="ngModel"
+        name="passwordOne"
+        #passwordOne="ngModel"
         ngModel
+        required
       />
     </div>
+    <ng-container *ngIf="passwordOne.touched">
+        <p class="error" *ngIf="passwordOne?.errors?.['required']">
+          Password is required!
+        </p>
+    </ng-container>
     <div class="form-group">
       <label for="rePassword" name="rePassword">Repeat password</label>
       <input
         type="password"
         id="rePassword"
-        name="rePassword"
-        #inputRepassword="ngModel"
+        name="passwordTwo"
+        #passwordTwo="ngModel"
         ngModel
+        required
       />
     </div>
-    <button class="register-btn">Create an account</button>
+    <ng-container *ngIf="passwordTwo.touched">
+        <p class="error" *ngIf="passwordTwo?.errors?.['required']">
+          Repeat password is required!
+        </p>
+    </ng-container>
+</div>
+
+  <p class="error" *ngIf="passwords?.errors?.['matchPasswordValidator']">
+    Passwords do not match!
+  </p>
+ 
+    <button class="register-btn"
+    [disabled]="registerForm.invalid"
+    [style]="{backgroundColor: registerForm.invalid ? 'lightgrey' : 'rgba(239, 196, 6, 0.781)'}"
+    >Create an account</button>
   </form>
 </section>
