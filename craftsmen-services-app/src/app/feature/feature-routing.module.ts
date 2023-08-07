@@ -4,6 +4,7 @@ import { ListingsComponent } from './listings/listings.component';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
 import { ListingEditComponent } from './listing-edit/listing-edit.component';
+import { AuthActivate } from '../core/guards/auth.activate';
 
 const routes: Routes = [
   {
@@ -11,10 +12,10 @@ const routes: Routes = [
     children: [
       { path: '', pathMatch: 'full', component: ListingsComponent },
       { path: ':listingId', component: ListingDetailsComponent },
-      { path: ':listingId/edit', component: ListingEditComponent },
+      { path: ':listingId/edit', canActivate: [AuthActivate], component: ListingEditComponent },
     ],
   },
-  { path: 'create', component: CreateListingComponent },
+  { path: 'create', canActivate: [AuthActivate], component: CreateListingComponent },
 ];
 
 @NgModule({

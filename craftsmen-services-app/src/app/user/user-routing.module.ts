@@ -4,16 +4,17 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ListingDetailsComponent } from '../feature/listing-details/listing-details.component';
+import { AuthActivate } from '../core/guards/auth.activate';
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'profile/:listingId', component: ListingDetailsComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile', canActivate: [AuthActivate], component: ProfileComponent },
+  { path: 'profile/:listingId', canActivate: [AuthActivate], component: ListingDetailsComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UserRoutingModule { }
+export class UserRoutingModule {}
