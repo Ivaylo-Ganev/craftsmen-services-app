@@ -1,6 +1,6 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FeatureService } from '../feature.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Listing } from 'src/app/types/listing';
 
 @Component({
@@ -11,7 +11,7 @@ import { Listing } from 'src/app/types/listing';
 export class ListingDetailsComponent implements OnInit {
   listing: Listing | undefined;
 
-  constructor(private featureService: FeatureService, private activatedRoute: ActivatedRoute) {}
+  constructor(private featureService: FeatureService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchListing();
@@ -22,5 +22,9 @@ export class ListingDetailsComponent implements OnInit {
     this.featureService.getListing(listingId).subscribe(listing => {
       this.listing = listing;
     })
+  }
+
+  editListingHandler() {
+    
   }
 }

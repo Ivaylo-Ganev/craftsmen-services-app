@@ -6,13 +6,17 @@ import { CreateListingComponent } from './create-listing/create-listing.componen
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
 import {FormsModule} from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { ListingEditComponent } from './listing-edit/listing-edit.component';
+import { ListingDeleteComponent } from './listing-delete/listing-delete.component';
 
 
 @NgModule({
   declarations: [
     ListingsComponent,
     CreateListingComponent,
-    ListingDetailsComponent
+    ListingDetailsComponent,
+    ListingEditComponent,
+    ListingDeleteComponent
   ],
   imports: [
     CommonModule,

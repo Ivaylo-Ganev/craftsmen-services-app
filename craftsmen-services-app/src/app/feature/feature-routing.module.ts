@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListingsComponent } from './listings/listings.component';
 import { CreateListingComponent } from './create-listing/create-listing.component';
 import { ListingDetailsComponent } from './listing-details/listing-details.component';
+import { ListingEditComponent } from './listing-edit/listing-edit.component';
+import { ListingDeleteComponent } from './listing-delete/listing-delete.component';
 
 const routes: Routes = [
   {
@@ -10,6 +12,8 @@ const routes: Routes = [
     children: [
       { path: '', pathMatch: 'full', component: ListingsComponent },
       { path: ':listingId', component: ListingDetailsComponent },
+      { path: ':listingId/edit', component: ListingEditComponent },
+      { path: ':listingId/delete', component: ListingDeleteComponent },
     ],
   },
   { path: 'create', component: CreateListingComponent },
