@@ -1,1 +1,117 @@
-<p>listing-edit works!</p>
+<!-- Edit listing component -->
+
+<section id="edit-listing">
+    <h2>Edit a listing</h2>
+    <form
+      class="edit-form"
+      #editForm="ngForm"
+      (ngSubmit)="editListingSubmitHandler(editForm)"
+    >
+      <div class="form-group">
+        <label for="name" name="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name={{listing?.name}}
+          #inputName="ngModel"
+          [(ngModel)] = "listing!.name"
+          required
+        />
+      </div>
+      <ng-container *ngIf="inputName.touched">
+        <p class="error" *ngIf="inputName?.errors?.['required']">
+          Name is required!
+        </p>
+      </ng-container>
+      <div class="form-group">
+        <label for="category" name="category">Category</label>
+        <input
+          type="text"
+          id="category"
+          name={{listing?.category}}
+          #inputCategory="ngModel"
+          [(ngModel)] = "listing!.category"
+          required
+        />
+      </div>
+      <ng-container *ngIf="inputCategory.touched">
+          <p class="error" *ngIf="inputCategory?.errors?.['required']">
+            Category is required!
+          </p>
+        </ng-container>
+      <div class="form-group">
+        <label for="photo" name="photo">Photo</label>
+        <input
+          type="text"
+          id="photo"
+          name={{listing?.photo}}
+          #inputPhoto="ngModel"
+          [(ngModel)] = "listing!.photo"
+          required
+        />
+      </div>
+      <ng-container *ngIf="inputPhoto.touched">
+          <p class="error" *ngIf="inputPhoto?.errors?.['required']">
+            Photo is required!
+          </p>
+        </ng-container>
+      <div class="form-group">
+        <label for="phone" name="phone">Phone</label>
+        <input
+          type="text"
+          id="phone"
+          name={{listing?.phone}}
+          #inputPhone="ngModel"
+          [(ngModel)] = "listing!.phone"
+          required
+        />
+      </div>
+      <ng-container *ngIf="inputPhone.touched">
+          <p class="error" *ngIf="inputPhone?.errors?.['required']">
+            Phone is required!
+          </p>
+        </ng-container>
+      <div class="form-group">
+        <label for="email" name="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name={{listing?.email}}
+          #inputEmail="ngModel"
+          [(ngModel)] = "listing!.email"
+          required
+          email
+        />
+      </div>
+      <ng-container *ngIf="inputEmail.touched">
+          <p class="error" *ngIf="inputEmail?.errors?.['required']">
+            Email is required!
+          </p>
+          <p class="error" *ngIf="inputEmail?.errors?.['email']">
+            Please enter a valid email!
+          </p>
+        </ng-container>
+      <div class="form-group">
+        <label for="desc" name="desc">Description</label>
+        <textarea
+          name={{listing?.desc}}
+          id="desc"
+          cols="35"
+          rows="6"
+          #inputDesc="ngModel"
+          [(ngModel)] = "listing!.desc"
+          required
+          maxlength="150"
+        ></textarea>
+      </div>
+      <ng-container *ngIf="inputDesc.touched">
+          <p class="error" *ngIf="inputDesc?.errors?.['required']">Description is required!</p>
+        </ng-container>
+      <button class="edit-btn"
+      [disabled]="editForm.invalid"
+      [style]="{backgroundColor: editForm.invalid ? 'lightgrey' : 'rgba(239, 196, 6, 0.781)'}"
+      >Edit
+  </button>
+    </form>
+  </section>
+  

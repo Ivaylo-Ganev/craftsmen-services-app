@@ -24,7 +24,7 @@ export class ListingDetailsComponent implements OnInit {
     })
   }
 
-  editListingHandler() {
-    
+  editListingHandler(listingId: string) {
+    this.router.navigate([`/listings/${listingId}/edit`]);
   }
 }
