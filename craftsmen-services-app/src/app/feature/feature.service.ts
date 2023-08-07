@@ -24,4 +24,7 @@ export class FeatureService {
     const searchQuery = encodeURIComponent(`_ownerId="${userId}"`);
     return this.http.get<Listing[]>(`/api/data/listings?where=${searchQuery}`);
   }
+  updateListing(name: string, category: string, photo: string, phone: string, email: string, desc: string, id: string) {
+    return this.http.put<Listing>(`/api/data/listings/${id}`, {name, category, photo, phone, email, desc});
+  }
 }

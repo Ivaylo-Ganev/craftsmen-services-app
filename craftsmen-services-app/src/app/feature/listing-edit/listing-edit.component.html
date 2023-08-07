@@ -12,7 +12,7 @@
         <input
           type="text"
           id="name"
-          name={{listing?.name}}
+          name="name"
           #inputName="ngModel"
           [(ngModel)] = "listing!.name"
           required
@@ -28,7 +28,7 @@
         <input
           type="text"
           id="category"
-          name={{listing?.category}}
+          name="category"
           #inputCategory="ngModel"
           [(ngModel)] = "listing!.category"
           required
@@ -44,7 +44,7 @@
         <input
           type="text"
           id="photo"
-          name={{listing?.photo}}
+          name="photo"
           #inputPhoto="ngModel"
           [(ngModel)] = "listing!.photo"
           required
@@ -60,7 +60,7 @@
         <input
           type="text"
           id="phone"
-          name={{listing?.phone}}
+          name="phone"
           #inputPhone="ngModel"
           [(ngModel)] = "listing!.phone"
           required
@@ -76,7 +76,7 @@
         <input
           type="email"
           id="email"
-          name={{listing?.email}}
+          name="email"
           #inputEmail="ngModel"
           [(ngModel)] = "listing!.email"
           required
@@ -94,7 +94,7 @@
       <div class="form-group">
         <label for="desc" name="desc">Description</label>
         <textarea
-          name={{listing?.desc}}
+          name="desc"
           id="desc"
           cols="35"
           rows="6"
