@@ -14,7 +14,7 @@
           id="name"
           name="name"
           #inputName="ngModel"
-          [(ngModel)] = "listing!.name"
+          ngModel = "{{listing?.name}}"
           required
         />
       </div>
@@ -30,7 +30,7 @@
           id="category"
           name="category"
           #inputCategory="ngModel"
-          [(ngModel)] = "listing!.category"
+          ngModel = "{{listing?.category}}"
           required
         />
       </div>
@@ -46,7 +46,7 @@
           id="photo"
           name="photo"
           #inputPhoto="ngModel"
-          [(ngModel)] = "listing!.photo"
+          ngModel = "{{listing?.photo}}"
           required
         />
       </div>
@@ -62,7 +62,7 @@
           id="phone"
           name="phone"
           #inputPhone="ngModel"
-          [(ngModel)] = "listing!.phone"
+          ngModel = "{{listing?.phone}}"
           required
         />
       </div>
@@ -78,7 +78,7 @@
           id="email"
           name="email"
           #inputEmail="ngModel"
-          [(ngModel)] = "listing!.email"
+          ngModel = "{{listing?.email}}"
           required
           email
         />
@@ -99,7 +99,7 @@
           cols="35"
           rows="6"
           #inputDesc="ngModel"
-          [(ngModel)] = "listing!.desc"
+          ngModel = "{{listing?.desc}}"
           required
           maxlength="150"
         ></textarea>

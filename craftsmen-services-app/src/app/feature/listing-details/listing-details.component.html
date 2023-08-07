@@ -26,7 +26,7 @@
       <p class="desc">
         {{listing?.desc}}
     </div>
-    <div class="buttons">
+    <div class="buttons" *ngIf="isOwner">
         <button class="btn edit-btn" (click)="editListingHandler(listing!._id)">Edit</button>
         <button class="btn delete-btn" (click)="deleteListingHandler(listing!._id)">Delete</button>
     </div>

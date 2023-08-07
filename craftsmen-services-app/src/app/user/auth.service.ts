@@ -16,6 +16,10 @@ export class AuthService {
     
   }
 
+  get currentUser() {
+    return this.user;
+  }
+
   get isLogged() {
     return !!this.user;
   }

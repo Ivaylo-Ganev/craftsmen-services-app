@@ -7,5 +7,5 @@ export interface Listing {
     desc: string;
     _createdOn: number;
     _id: string;
-    _onwnerId: string;
+    _ownerId: string;
 }

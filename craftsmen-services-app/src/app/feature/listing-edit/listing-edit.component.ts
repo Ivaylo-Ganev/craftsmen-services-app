@@ -20,7 +20,7 @@ export class ListingEditComponent implements OnInit {
   }
 
   fetchListing() {
-    this.featureService.getListing(this.listingId).subscribe(listing => {
+    this.featureService.getListing(this.listingId).subscribe((listing) => {
       this.listing = listing;
     })
   }

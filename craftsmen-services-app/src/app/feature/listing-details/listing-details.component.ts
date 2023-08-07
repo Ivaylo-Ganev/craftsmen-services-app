@@ -2,20 +2,33 @@ import { Component, OnInit } from '@angular/core';
 import { FeatureService } from '../feature.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Listing } from 'src/app/types/listing';
+import { AuthService } from 'src/app/user/auth.service';
+import { User } from 'src/app/types/user';
 
 @Component({
   selector: 'app-listing-details',
   templateUrl: './listing-details.component.html',
-  styleUrls: ['./listing-details.component.css']
+  styleUrls: ['./listing-details.component.css'],
 })
 export class ListingDetailsComponent implements OnInit {
   listing: Listing | undefined;
   isLoading: boolean = true;
+  currentUser: User | undefined;
 
-  constructor(private featureService: FeatureService, private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(
+    private featureService: FeatureService,
+    private authService: AuthService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.fetchListing();
+    this.currentUser = this.authService.currentUser;
+  }
+
+  get isOwner() {
+    return this.currentUser?._id === this.listing?._ownerId ? true : false;
   }
 
   fetchListing() {
@@ -27,8 +40,8 @@ export class ListingDetailsComponent implements OnInit {
       },
       error: () => {
         this.isLoading = false;
-      }
-    })
+      },
+    });
   }
 
   editListingHandler(listingId: string) {
@@ -39,8 +52,8 @@ export class ListingDetailsComponent implements OnInit {
     const choice = confirm('Are you sure you want to delete this listing?');
     if (choice) {
       this.featureService.deleteListing(listingId).subscribe(() => {
-      this.router.navigate(['/listings']);
-      })
+        this.router.navigate(['/listings']);
+      });
     } else {
       this.router.navigate([`/listings/${listingId}`]);
     }

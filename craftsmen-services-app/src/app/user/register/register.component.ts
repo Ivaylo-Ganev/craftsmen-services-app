@@ -17,7 +17,6 @@ export class RegisterComponent {
       return;
     }
     const {email, username, phone, userPhoto, passwords: {password}} = form.value;
-    debugger
     this.authService.register(email, username, phone, userPhoto, password).subscribe(()=> {
       this.router.navigate(['/listings']);
     })
