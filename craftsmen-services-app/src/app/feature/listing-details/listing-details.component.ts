@@ -27,4 +27,15 @@ export class ListingDetailsComponent implements OnInit {
   editListingHandler(listingId: string) {
     this.router.navigate([`/listings/${listingId}/edit`]);
   }
+
+  deleteListingHandler(listingId: string) {
+    const choice = confirm('Are you sure you want to delete this listing?');
+    if (choice) {
+      this.featureService.deleteListing(listingId).subscribe(() => {
+      this.router.navigate(['/listings']);
+      })
+    } else {
+      this.router.navigate([`/listings/${listingId}`]);
+    }
+  }
 }

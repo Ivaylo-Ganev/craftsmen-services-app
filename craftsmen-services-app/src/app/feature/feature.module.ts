@@ -7,7 +7,6 @@ import { ListingDetailsComponent } from './listing-details/listing-details.compo
 import {FormsModule} from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { ListingEditComponent } from './listing-edit/listing-edit.component';
-import { ListingDeleteComponent } from './listing-delete/listing-delete.component';
 
 
 @NgModule({
@@ -16,7 +15,6 @@ import { ListingDeleteComponent } from './listing-delete/listing-delete.componen
     CreateListingComponent,
     ListingDetailsComponent,
     ListingEditComponent,
-    ListingDeleteComponent
   ],
   imports: [
     CommonModule,

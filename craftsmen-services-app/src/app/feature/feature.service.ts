@@ -27,4 +27,7 @@ export class FeatureService {
   updateListing(name: string, category: string, photo: string, phone: string, email: string, desc: string, id: string) {
     return this.http.put<Listing>(`/api/data/listings/${id}`, {name, category, photo, phone, email, desc});
   }
+  deleteListing(id: string) {
+    return this.http.delete<Listing>(`/api/data/listings/${id}`);
+  }
 }
