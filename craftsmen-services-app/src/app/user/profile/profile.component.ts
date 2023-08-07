@@ -11,6 +11,7 @@ import { User } from 'src/app/types/user';
 })
 export class ProfileComponent implements OnInit {
   listings: Listing[] = [];
+  isLoading: boolean = true;
 
   constructor(private featureService: FeatureService, private authService: AuthService) {}
 
@@ -25,6 +26,10 @@ export class ProfileComponent implements OnInit {
     this.featureService.getUserListings(userId).subscribe({
       next: (listings) => {
         this.listings = listings;
+        this.isLoading = false;
+      },
+      error: () => {
+        this.isLoading = false;
       }
     })
   }

@@ -10,6 +10,7 @@ import { Listing } from 'src/app/types/listing';
 })
 export class ListingDetailsComponent implements OnInit {
   listing: Listing | undefined;
+  isLoading: boolean = true;
 
   constructor(private featureService: FeatureService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -19,8 +20,14 @@ export class ListingDetailsComponent implements OnInit {
 
   fetchListing() {
     const listingId = this.activatedRoute.snapshot.params['listingId'];
-    this.featureService.getListing(listingId).subscribe(listing => {
-      this.listing = listing;
+    this.featureService.getListing(listingId).subscribe({
+      next: (listing) => {
+        this.listing = listing;
+        this.isLoading = false;
+      },
+      error: () => {
+        this.isLoading = false;
+      }
     })
   }
 

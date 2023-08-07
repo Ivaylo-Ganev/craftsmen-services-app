@@ -9,6 +9,7 @@ import { Listing } from 'src/app/types/listing';
 })
 export class ListingsComponent implements OnInit{
   listings: Listing[] = [];
+  isLoading: boolean = true;
 
   constructor(private featureService: FeatureService) {}
 
@@ -19,9 +20,11 @@ export class ListingsComponent implements OnInit{
     this.featureService.getListings().subscribe({
       next: (listings) => {
         this.listings = listings;
+        this.isLoading = false;
       },
       error: () => {
         this.listings = [];
+        this.isLoading = false;
       }
     })
   }

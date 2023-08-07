@@ -1,6 +1,10 @@
 
 <!-- Catalog component -->
+<div *ngIf="isLoading">
+    <app-loader />
+</div>
 
+<ng-container *ngIf="!isLoading">
 <h1 class="heading">Craftsmen listings</h1>
 <div class="craftsmen-cards" *ngIf="listings.length !== 0">
     <article class="card" *ngFor="let listing of listings">
@@ -18,4 +22,4 @@
     </article>
 </div>
 <div class="no-listings" *ngIf="listings.length === 0">No listings</div>
-
+</ng-container>

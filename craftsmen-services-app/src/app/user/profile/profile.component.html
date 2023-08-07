@@ -1,4 +1,8 @@
-<section id="profile">
+<div *ngIf="isLoading">
+  <app-loader />
+</div>
+
+<section id="profile" *ngIf="!isLoading">
   <div class="profile-container">
     <div class="profile-img-container">
       <img

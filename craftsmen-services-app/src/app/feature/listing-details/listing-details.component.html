@@ -1,5 +1,9 @@
 <!-- Details component -->
+<div *ngIf="isLoading">
+  <app-loader />
+</div>
 
+<ng-container *ngIf="!isLoading">
 <h1 class="details-heading">Details</h1>
 <section id="details">
   <div class="details-container">
@@ -28,6 +32,7 @@
     </div>
   </div>
 </section>
+</ng-container>
 
 
 
