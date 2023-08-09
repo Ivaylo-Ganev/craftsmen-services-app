@@ -57,7 +57,7 @@
     font-size: 32px;
 }
 .buttons {
-    margin: 20px 15px;
+    margin: 50px 15px;
     display: flex;
     gap: 10px;
     justify-content: space-evenly;

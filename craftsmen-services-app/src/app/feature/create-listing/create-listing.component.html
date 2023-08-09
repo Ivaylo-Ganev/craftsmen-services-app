@@ -16,11 +16,16 @@
         #inputName="ngModel"
         ngModel
         required
+        minlength="3"
+        maxlength="25"
       />
     </div>
     <ng-container *ngIf="inputName.touched">
       <p class="error" *ngIf="inputName?.errors?.['required']">
         Name is required!
+      </p>
+      <p class="error" *ngIf="inputName?.errors?.['minlength']">
+        Name should be at least 3 characters!
       </p>
     </ng-container>
     <div class="form-group">
@@ -32,12 +37,17 @@
         #inputCategory="ngModel"
         ngModel
         required
+        minlength="3"
+        maxlength="16"
       />
     </div>
     <ng-container *ngIf="inputCategory.touched">
         <p class="error" *ngIf="inputCategory?.errors?.['required']">
           Category is required!
         </p>
+        <p class="error" *ngIf="inputCategory?.errors?.['minlength']">
+            Category should be at least 3 characters!
+          </p>
       </ng-container>
     <div class="form-group">
       <label for="photo" name="photo">Photo</label>
@@ -64,6 +74,7 @@
         #inputPhone="ngModel"
         ngModel
         required
+        maxlength="15"
       />
     </div>
     <ng-container *ngIf="inputPhone.touched">
@@ -101,11 +112,15 @@
         #inputDesc="ngModel"
         ngModel
         required
-        maxlength="150"
+        maxlength="400"
+        minlength="200"
       ></textarea>
     </div>
     <ng-container *ngIf="inputDesc.touched">
         <p class="error" *ngIf="inputDesc?.errors?.['required']">Description is required!</p>
+        <p class="error" *ngIf="inputDesc?.errors?.['minlength']">
+            Description should be at least 200 characters!
+          </p>
       </ng-container>
     <button class="create-btn"
     [disabled]="createForm.invalid"
