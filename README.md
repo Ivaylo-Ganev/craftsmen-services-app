@@ -8,8 +8,9 @@ A single page application for listing different craftsmen services. All the user
 
 1. Angular
 2. JavaScript
-2. HTML
-3. CSS
+3. TypeScript
+4. HTML
+5. CSS
 
 ## Back-end
 
