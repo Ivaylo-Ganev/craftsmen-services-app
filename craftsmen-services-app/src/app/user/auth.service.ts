@@ -24,16 +24,7 @@ export class AuthService {
     return !!this.user;
   }
 
-  // subscription: Subscription
-
-  // private user$$ = new BehaviorSubject<User | undefined>(undefined);
-
-  // public user$ = this.user$$.asObservable();
-
   constructor(private http: HttpClient) {
-    // this.subscription = this.user$.subscribe((user) => {
-    //   this.user = user;
-    // })
     try {
       const lsUser = localStorage.getItem(this.USER_KEY) || '';
       this.user = JSON.parse(lsUser);
