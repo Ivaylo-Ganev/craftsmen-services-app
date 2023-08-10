@@ -21,10 +21,6 @@ export class ListingsComponent implements OnInit{
       next: (listings) => {
         this.listings = listings;
         this.isLoading = false;
-      },
-      error: () => {
-        this.listings = [];
-        this.isLoading = false;
       }
     })
   }
