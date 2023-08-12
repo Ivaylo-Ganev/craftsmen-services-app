@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FeatureService } from '../feature.service';
 import { Listing } from 'src/app/types/listing';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listings',
@@ -11,7 +12,7 @@ export class ListingsComponent implements OnInit{
   listings: Listing[] = [];
   isLoading: boolean = true;
 
-  constructor(private featureService: FeatureService) {}
+  constructor(private featureService: FeatureService, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchListings();
@@ -23,6 +24,9 @@ export class ListingsComponent implements OnInit{
         this.isLoading = false;
       }
     })
+  }
+  detailsHandler(listingId: string): void {
+    this.router.navigate([`/listings/${listingId}`]);
   }
 
 }

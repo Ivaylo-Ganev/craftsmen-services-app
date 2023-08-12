@@ -3,6 +3,7 @@ import { FeatureService } from 'src/app/feature/feature.service';
 import { Listing } from 'src/app/types/listing';
 import { AuthService } from '../auth.service';
 import { User } from 'src/app/types/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +14,7 @@ export class ProfileComponent implements OnInit {
   listings: Listing[] = [];
   isLoading: boolean = true;
 
-  constructor(private featureService: FeatureService, private authService: AuthService) {}
+  constructor(private featureService: FeatureService, private authService: AuthService, private router: Router) {}
 
   get user(): User {
     return this.authService.user!;
@@ -32,5 +33,9 @@ export class ProfileComponent implements OnInit {
         this.isLoading = false;
       }
     })
+  }
+
+  detailsHandler(listingId: string): void {
+    this.router.navigate([`/listings/${listingId}`]);
   }
 }

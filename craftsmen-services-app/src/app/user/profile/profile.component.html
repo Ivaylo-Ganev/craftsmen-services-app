@@ -27,9 +27,7 @@
         <p class="name">{{listing.name}}</p>
         <p class="category">{{listing.category}}</p>
         <p class="description">{{listing.desc | slice: 120}}</p>
-        <p class="details-link">
-          <a routerLink={{listing._id}}>See more</a>
-        </p>
+        <button class="details-btn" (click)="detailsHandler(listing._id)">See more</button>
       </div>
     </article>
   </div>
