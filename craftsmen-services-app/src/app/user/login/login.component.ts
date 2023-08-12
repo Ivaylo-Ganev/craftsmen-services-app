@@ -17,7 +17,7 @@ export class LoginComponent {
     }
     const { email, password } = form.value;
     this.authService.login(email, password).subscribe(() => {
-      this.router.navigate(['/listings']);
+      this.router.navigate(['/home']);
     });
   }
 }
